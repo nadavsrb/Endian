@@ -5,7 +5,9 @@
 
 int is_big_endian() {
     //in bytes 0x0...01
-    int one = 1;
+    //in the exercise we are assuming
+    // that word is in the size of long.
+    long one = 1;
 
     //we are getting the byte that is stored in
     //the lowest address cell (from the bytes in 1).
