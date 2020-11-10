@@ -53,3 +53,4 @@ dkms.conf
 
 #clion things
 .idea/
+/src/cmake-build-debug
