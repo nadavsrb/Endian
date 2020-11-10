@@ -39,3 +39,19 @@ unsigned long merge_bytes(unsigned long x, unsigned long int y){
 
     return (firstHalf | secondHalf);
 }
+
+unsigned long moveBitesToLoc(unsigned char b, int i){ //helping func
+    unsigned long wordSizeInBites = 8 * sizeof(unsigned long);
+
+    return ((unsigned long) b) << (wordSizeInBites - 8 - 8 * i);
+}
+
+unsigned long put_byte(unsigned long x, unsigned char b, int i){
+    unsigned long bitsToSave = ~(moveBitesToLoc(0xFF, i));
+
+    x = x & bitsToSave;
+
+    x = x | (moveBitesToLoc(b, i));
+
+    return x;
+}
