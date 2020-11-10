@@ -2,6 +2,7 @@
 #include "ex1.h";
 
 #include <stdint.h>
+#include <limits.h>
 
 int is_big_endian() {
     //in bytes 0x0...01
@@ -25,4 +26,16 @@ int is_big_endian() {
     }
 
     return 1;
+}
+
+unsigned long merge_bytes(unsigned long x, unsigned long int y){
+    unsigned long halfSizeOfULInBites = (sizeof(unsigned long) * 8) / 2;
+
+    unsigned long firstHalf = ULONG_MAX>>halfSizeOfULInBites;
+    unsigned long secondHalf = ULONG_MAX<<halfSizeOfULInBites;
+
+    firstHalf = y & firstHalf;
+    secondHalf = x & secondHalf;
+
+    return (firstHalf | secondHalf);
 }
