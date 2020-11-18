@@ -54,3 +54,7 @@ dkms.conf
 #clion things
 .idea/
 /src/cmake-build-debug
+
+#vs code things
+.vscode/
+build/

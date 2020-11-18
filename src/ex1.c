@@ -8,6 +8,13 @@
 #define BYTE_CONTAINS_NUMBER_ONE 0x01
 #define BYTE_ALL_BITES_ARE_ONE 0xFF
 
+/**
+ * @brief this func tell you if your
+ *  computer using big or little endian.
+ * 
+ * @return if True (big endian) returns 1,
+ *  else (if little endian) return 0.
+ */
 int is_big_endian() {
     //in bytes 0x0...01
     //in the exercise we are assuming
@@ -33,6 +40,8 @@ int is_big_endian() {
 }
 
 unsigned long merge_bytes(unsigned long x, unsigned long int y){
+
+    //here we are calculating the size of half unsigned long in bytes
     unsigned long halfSizeOfULInBites = (sizeof(unsigned long) * NUM_BITES_IN_ONE_BYTE) / 2;
 
     unsigned long firstHalf = ULONG_MAX>>halfSizeOfULInBites;
