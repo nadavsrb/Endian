@@ -1,5 +1,5 @@
 // 213056153 Nadav Sharabi
-#include "ex1.h";
+#include "ex1.h"
 
 #include <stdint.h>
 #include <limits.h>
