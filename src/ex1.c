@@ -66,6 +66,10 @@ unsigned long moveBitesToLoc(unsigned char b, int i){ //helping func
 }
 
 unsigned long put_byte(unsigned long x, unsigned char b, int i){
+    if(i < 0 || i > (sizeof(unsigned long) - 1)){
+        return x;
+    }
+
     unsigned long bitsToSave = ~(moveBitesToLoc(BYTE_ALL_BITES_ARE_ONE, i));
 
     x = x & bitsToSave;
